@@ -1,0 +1,23 @@
+<header>
+    <h4>Catégories</h4>
+
+        <div class="group-choice-container">
+            <button class="group-choice" (click)="setCategoryGroupedView()" [class.active]="isGroupMode">
+                @if (isGroupMode) {
+                    <img src="assets/IconChecked.png" alt="category group">
+                } @else {
+                    <img src="assets/Icon.png" alt="category group">
+                }
+                <p>Groupe de catégorie</p>
+            </button>
+            <button class="group-choice" (click)="setAlphaOrderedView()" [class.active]="isAlphaMode">
+                @if (isGroupMode) {
+                    <img src="assets/Vector.png" alt="order by alpha">
+                } @else {
+                    <img src="assets/VectorChecked.png" alt="order by alpha">
+                }
+                <p>Ordre alphabétique</p>
+            </button>
+        </div>
+        
+</header>

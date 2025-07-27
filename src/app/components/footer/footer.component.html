@@ -1,0 +1,9 @@
+<footer>
+    @if (confirmationMessage()) {
+        <div class="confirmation-message">
+            <p class="confirmation">{{ confirmationMessage() }}</p>
+        </div>
+    }
+    
+    <button [disabled]="isDisabled()" (click)="submitCategory()">Sélectionner la catégorie</button>
+</footer>

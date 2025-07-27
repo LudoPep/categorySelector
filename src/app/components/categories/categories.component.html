@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <app-search [searchTerm]="searchTerm()" [groupedCategories]="groupedCategories" 
+        (searchTermChange)="setSearchTerm($event)" (selectedGroupChange)="setSelectedGroup($event)"
+        ></app-search>
+        
+        
+        <div class="category-list">
+            @if (currentView() === 'group') {
+
+                @for (category of filteredCategories(); track category.group?.id) {
+                    <div class="category-block">
+                        <div class="category-block-title" [style.color]="getColorStyle(category.group.color).color"
+                            [style.backgroundColor]="getColorStyle(category.group.color).backgroundColor">
+                                <p>{{ category.group.name }}</p>
+                        </div>
+                        
+                        <div class="categories">
+                            @for (cat of category.categories; track cat.id) {
+                                <app-category-item [category]="cat" [view]="'group'" />
+                            }
+                        </div>
+                    </div>
+                }
+
+            } @else {
+
+                <div class="categories">
+                    @for (cat of flatCategories(); track cat.id) {
+                        <app-category-item [category]="cat" [view]="'alpha'" />
+                    }
+                </div>
+
+            }
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="search-container">
+    <div class="category-search">
+        <label for="category-search"></label>
+        <img src="assets/Content.png" alt="search icon">
+        <input class="category-search-input" type="text" name="category-search" id="category-search" placeholder="Rechercher une categorie" [value]="searchTerm" (input)="onInput($event)">
+    </div>
+
+    <label for="category-selector"></label>
+    <select class="category-selector" name="category-selector" id="category-selector" 
+    aria-placeholder="Tous les groupes de catégories" (change)="onGroupChange($event)">
+            <option value="">Tous les groupes de catégories</option>
+        @for (category of groupedCategories(); track category.group?.id) {
+            <option [value]="category.group.id"
+            [style.color]="getColorStyle(category.group.color).color">
+                {{ category.group.name }}
+            </option>
+        }
+    </select>
+</div>

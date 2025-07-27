@@ -1,0 +1,17 @@
+@if (category) {
+    <div class="category-item" (click)="toggleClicked()" [class.category-item-selected]="isSelected()">
+    
+        <div id="item">
+            @if (view === 'alpha') {
+                <div class="category-title" [style.color]="getColorStyle(category.group?.color).color"
+                            [style.backgroundColor]="getColorStyle(category.group?.color).backgroundColor">
+                    <p>{{ category.group?.name }}</p>
+                </div>
+            }
+            <h6 id="item-wording">{{ category.wording }}</h6>
+            <p id="item-description">{{ category.description }}</p>
+        </div>
+    
+    </div>
+}
+

@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="layout">
+  
+    @defer { 
+      <main class="content">
+        <router-outlet />
+      </main>
+    } @loading {
+      <p>Loading ...</p>
+    }
+</div>
+
+<app-footer></app-footer>
