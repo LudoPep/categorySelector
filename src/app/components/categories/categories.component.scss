@@ -41,6 +41,12 @@
                 }
             }
 
+            @media (max-width: 510px) {
+                .category-block-title {
+                    height: 30px;
+                }
+            }
+
             .categories {
                 display: flex;
                 flex-wrap: wrap;

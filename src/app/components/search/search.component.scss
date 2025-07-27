@@ -22,7 +22,7 @@
     }
 
     .category-search {
-        width: 877px;
+        width: calc(100% - 271px - 16px);
         height: 35px;
         border-radius: 4px;
         border: 1px solid #DCE4ED;
