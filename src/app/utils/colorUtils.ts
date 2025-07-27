@@ -14,10 +14,9 @@ export const colorMap: Record<ColorKey, ColorStyle> = {
   'm-yellow': { color: '#FAA11C', backgroundColor: '#FFF5BF' },
 };
 
+// To set the category group font and background color using the value returned by the service (group.color)
 export function getColorStyle(color?: string): ColorStyle {
   const defaultColor: ColorKey = 'm-yellow';
-  const validColor = Object.keys(colorMap).includes(color as ColorKey)
-    ? (color as ColorKey)
-    : defaultColor;
+  const validColor = Object.keys(colorMap).includes(color as ColorKey) ? (color as ColorKey) : defaultColor;
   return colorMap[validColor];
 }

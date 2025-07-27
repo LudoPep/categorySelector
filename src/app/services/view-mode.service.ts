@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class ViewModeService {
-  private _viewMode = signal<'group' | 'alpha'>('group');
+  private readonly _viewMode = signal<'group' | 'alpha'>('group');
 
   get viewMode() {
     return this._viewMode.asReadonly();

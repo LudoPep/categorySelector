@@ -26,7 +26,7 @@ export class CategoryItemComponent {
   ) { }
 
   toggleClicked() {
-    this.selectionService.toggleCategory(this.category);
+    this.selectionService.toSelectCategory(this.category);
   }
 
   isSelected(): boolean {

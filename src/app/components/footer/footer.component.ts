@@ -21,7 +21,7 @@ export class FooterComponent {
   submitCategory() {
     const selected = this.selectionService.selectedCategories();
     if (selected.length === 1) {
-      this.confirmationMessage.set(`✅ Catégorie sélectionnée : ${selected[0].wording}`);
+      this.confirmationMessage.set(`Catégorie sélectionnée : ${selected[0].wording}`);
       this.selectionService.clearSelection();
     } else {
       this.confirmationMessage.set('Aucune catégorie sélectionnée.');

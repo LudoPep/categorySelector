@@ -1,6 +1,12 @@
 # CategorySelector
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+This project was generated using Angular version 20.0.5.
+It is a Single Page Application where the user can select a category among multiple category groups.
+The user can search through all categories using a keyword, or search by category group.
+A display option is available, allowing either a classic view by category group or an alphabetical view.
+
+Once a category is selected, a button is enabled to submit the user choice.
+
 
 ## Development server
 
@@ -10,50 +16,30 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Styling choice
 
-```bash
-ng generate component component-name
-```
+The project uses SCSS stylesheets, which allow style nesting.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Unit Testing
 
-## Building
-
-To build the project run:
+Unit tests have been implemented for Categories component, using JEST.
+They can be launched using the following command :
 
 ```bash
-ng build
-```
+npm run test-ci
+``` 
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Backend
 
-## Running unit tests
+The project uses 2 different endpoint from a distant backend (on port 3000) : 
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+`http://localhost:3000/all-categories` => returns all categories,
+`http://localhost:3000/visible-categories` => returns IDs of categories that must be visible on screen
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Font
+Since the 'Eina03-SemiBold' font is not freely available, the 'Quicksand' font was used because it closely resembles it

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { signal } from '@angular/core';
 
 import { SearchComponent } from './search.component';
 
@@ -14,6 +15,7 @@ describe('SearchComponent', () => {
 
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
+    component.groupedCategories = signal([]);
     fixture.detectChanges();
   });
 

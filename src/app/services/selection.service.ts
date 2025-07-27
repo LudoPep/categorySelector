@@ -7,11 +7,13 @@ import { Category } from '../interfaces/category';
 export class SelectionService {
   selectedCategories = signal<Category[]>([]);
 
-  toggleCategory(category: Category) {
+  // Select a category
+  toSelectCategory(category: Category) {
     const isSelected = this.selectedCategories().some(c => c.id === category.id);
     this.selectedCategories.set(isSelected ? [] : [category]);
   }
 
+  // Remove the selected state
   clearSelection() {
     this.selectedCategories.set([]);
   }

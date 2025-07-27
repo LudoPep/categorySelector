@@ -21,6 +21,11 @@ export class SearchComponent {
 
   public getColorStyle = getColorStyle;
 
+   // pour appeler le signal et pouvoir utiliser le getter dans le template
+  get groupedCategoriesList(): CategoryGroup[] {
+    return this.groupedCategories();
+  }
+
   onInput(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.searchTermChange.emit(value);
